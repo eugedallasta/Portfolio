@@ -7,17 +7,14 @@
     fixedInViewport="false"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-    color="primary"
-    >
+    [opened]="(isHandset$ | async) === false">
 
     <mat-toolbar color="primary">Menu</mat-toolbar>
 
     <mat-nav-list>
-      <a mat-list-item href="#">About</a>
-      <a mat-list-item href="#">Experience</a>
-      <a mat-list-item href="#">Work</a>
-      <a mat-list-item href="#">Contact</a>
+      <div *ngFor="let section of sections">
+        <a mat-list-item href="#{{section.id}}">{{section.title}}</a>
+      </div>
     </mat-nav-list>
 
   </mat-sidenav>
@@ -36,10 +33,9 @@
       </button>
 
       <div *ngIf="!(isHandset$ | async)">
-        <a href="#">About</a>
-        <a href="#">Experience</a>
-        <a href="#">Work</a>
-        <a href="#">Contact</a>
+        <span *ngFor="let section of sections">
+             <a href="#">{{section.title}}</a>
+        </span>
       </div>
     </mat-toolbar>
 

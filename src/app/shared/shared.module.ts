@@ -22,7 +22,7 @@ import { MatListModule } from '@angular/material/list';
     MatListModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
   ]
 })
 export class SharedModule { }
