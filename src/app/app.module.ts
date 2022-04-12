@@ -18,6 +18,9 @@ import { WorkModule } from './modules/work/work.module';
 // Modulo material
 import { MaterialModule } from './material.module';
 
+// Modulo shared
+import { SharedModule } from './shared/shared.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,8 @@ import { MaterialModule } from './material.module';
     HomeModule,
     WorkModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
