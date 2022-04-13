@@ -1,0 +1,29 @@
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    // position: relative;
+    display: block;
+    
+}
+
+svg {
+    width: 20px;
+    -webkit-transition: color 1s, bottom 1s linear;
+    transition        : color 1s, bottom 1s linear;
+    // position: absolute;
+    bottom: 0px;
+}
+
+svg:hover {
+    color: aqua;
+    bottom: 2px;
+    
+}
+
+.social-container {
+    max-width: 50px;
+}
+
