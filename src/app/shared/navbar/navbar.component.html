@@ -9,7 +9,18 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false">
 
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar color="primary"> Menu
+      <button
+        class="sidenav-close"
+        type="button"
+        aria-label="close"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon >close</mat-icon>
+      </button>
+    </mat-toolbar>
+    
 
     <mat-nav-list>
       <div *ngFor="let section of sections">
@@ -20,7 +31,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <span>portfolio</span>
+      <span>LOGO</span>
       <span class="spacer"></span>
       <button
         type="button"
@@ -33,9 +44,9 @@
       </button>
 
       <div *ngIf="!(isHandset$ | async)">
-        <span *ngFor="let section of sections">
-             <a href="#">{{section.title}}</a>
-        </span>
+        <ng-container  *ngFor="let section of sections">
+             <a href="#{{section.id}}">{{section.title}}</a>
+      </ng-container>
       </div>
     </mat-toolbar>
 

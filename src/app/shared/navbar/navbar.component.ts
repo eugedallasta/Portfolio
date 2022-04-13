@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-
+  // TO-DO servir información en un json, basarnos en una interface, y acceder mediante servicio
   sections = [
     {
       id: 'about',
@@ -26,20 +27,20 @@ export class NavbarComponent {
     {
       id: 'contact',
       title: 'Contact',
-    }
+    },
   ];
 
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
+    // .observe(Breakpoints.Handset)
+    .observe('(max-width: 768px)')
     .pipe(
       map((result) => {
-        console.log('matches:', result.matches);
-        console.log('breakpoints:', result.breakpoints);
-        console.log('breakpoints:', result.breakpoints);
         return result.matches;
       }),
       shareReplay()
     );
 
   constructor(private breakpointObserver: BreakpointObserver) { }
+
+
 }

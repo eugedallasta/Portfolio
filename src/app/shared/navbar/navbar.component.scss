@@ -12,7 +12,6 @@
   z-index: 1;
 }
 
-
 .hidden {
   display: none;
 }
@@ -21,10 +20,14 @@
   flex: 1 1 auto;
 }
 
-
 mat-toolbar a {
   display: inline-block;
   margin: 0 10px;
   color: white;
   text-decoration: none;
 }
+.sidenav-close {
+  position: absolute;
+  right: 10px;
+}
+
